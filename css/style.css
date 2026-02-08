@@ -1,0 +1,1313 @@
+{\rtf1\ansi\ansicpg932\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red24\green30\blue42;\red246\green249\blue251;}
+{\*\expandedcolortbl;;\cssrgb\c12157\c16078\c21569;\cssrgb\c97255\c98039\c98824;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2    1	/* ==========================================\
+     2	   CSS Variables (\uc0\u12459 \u12473 \u12479 \u12512 \u12503 \u12525 \u12497 \u12486 \u12451 )\
+     3	   ========================================== */\
+     4	:root \{\
+     5	    --primary-color: #ffffff;\
+     6	    --primary-dark: #e5e5e5;\
+     7	    --secondary-color: #cccccc;\
+     8	    --accent-color: #999999;\
+     9	    --danger-color: #ef4444;\
+    10	    --text-dark: #000000;\
+    11	    --text-light: #333333;\
+    12	    --bg-light: #e5e5e5;\
+    13	    --bg-white: #ffffff;\
+    14	    --border-color: #cccccc;\
+    15	    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);\
+    16	    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\
+    17	    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);\
+    18	    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);\
+    19	    --border-radius: 8px;\
+    20	    --transition: all 0.3s ease;\
+    21	    --max-width: 1200px;\
+    22	\}\
+    23	\
+    24	/* ==========================================\
+    25	   \uc0\u12522 \u12475 \u12483 \u12488  & \u22522 \u26412 \u12473 \u12479 \u12452 \u12523 \
+    26	   ========================================== */\
+    27	* \{\
+    28	    margin: 0;\
+    29	    padding: 0;\
+    30	    box-sizing: border-box;\
+    31	\}\
+    32	\
+    33	body \{\
+    34	    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\
+    35	    line-height: 1.6;\
+    36	    color: var(--text-dark);\
+    37	    background: var(--bg-light);\
+    38	    overflow-x: hidden;\
+    39	\}\
+    40	\
+    41	.container \{\
+    42	    max-width: var(--max-width);\
+    43	    margin: 0 auto;\
+    44	    padding: 0 20px;\
+    45	\}\
+    46	\
+    47	a \{\
+    48	    text-decoration: none;\
+    49	    color: inherit;\
+    50	    transition: var(--transition);\
+    51	\}\
+    52	\
+    53	button \{\
+    54	    cursor: pointer;\
+    55	    border: none;\
+    56	    background: none;\
+    57	    font-family: inherit;\
+    58	\}\
+    59	\
+    60	img \{\
+    61	    max-width: 100%;\
+    62	    height: auto;\
+    63	    display: block;\
+    64	\}\
+    65	\
+    66	/* ==========================================\
+    67	   \uc0\u12504 \u12483 \u12480 \u12540 \
+    68	   ========================================== */\
+    69	.header \{\
+    70	    position: fixed;\
+    71	    top: 0;\
+    72	    left: 0;\
+    73	    width: 100%;\
+    74	    background: var(--bg-white);\
+    75	    box-shadow: var(--shadow);\
+    76	    z-index: 1000;\
+    77	\}\
+    78	\
+    79	.header-content \{\
+    80	    display: flex;\
+    81	    align-items: center;\
+    82	    justify-content: space-between;\
+    83	    padding: 1rem 0;\
+    84	    gap: 2rem;\
+    85	\}\
+    86	\
+    87	.logo a \{\
+    88	    display: flex;\
+    89	    align-items: center;\
+    90	    gap: 0.5rem;\
+    91	    font-size: 1.5rem;\
+    92	    font-weight: 700;\
+    93	    color: var(--primary-color);\
+    94	\}\
+    95	\
+    96	.logo i \{\
+    97	    font-size: 1.8rem;\
+    98	\}\
+    99	\
+   100	/* \uc0\u26908 \u32034 \u12496 \u12540  */\
+   101	.search-bar \{\
+   102	    flex: 1;\
+   103	    max-width: 500px;\
+   104	    display: flex;\
+   105	    gap: 0.5rem;\
+   106	\}\
+   107	\
+   108	.search-input \{\
+   109	    flex: 1;\
+   110	    padding: 0.75rem 1rem;\
+   111	    border: 2px solid var(--border-color);\
+   112	    border-radius: var(--border-radius);\
+   113	    font-size: 1rem;\
+   114	    transition: var(--transition);\
+   115	\}\
+   116	\
+   117	.search-input:focus \{\
+   118	    outline: none;\
+   119	    border-color: var(--primary-color);\
+   120	    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\
+   121	\}\
+   122	\
+   123	.search-btn \{\
+   124	    padding: 0.75rem 1.5rem;\
+   125	    background: var(--primary-color);\
+   126	    color: #000000;\
+   127	    border-radius: var(--border-radius);\
+   128	    transition: var(--transition);\
+   129	\}\
+   130	\
+   131	.search-btn:hover \{\
+   132	    background: var(--primary-dark);\
+   133	\}\
+   134	\
+   135	/* \uc0\u12490 \u12499 \u12466 \u12540 \u12471 \u12519 \u12531  */\
+   136	.nav \{\
+   137	    display: flex;\
+   138	    gap: 1.5rem;\
+   139	    align-items: center;\
+   140	\}\
+   141	\
+   142	.nav-link \{\
+   143	    display: flex;\
+   144	    align-items: center;\
+   145	    gap: 0.5rem;\
+   146	    padding: 0.5rem 1rem;\
+   147	    font-weight: 500;\
+   148	    border-radius: var(--border-radius);\
+   149	    transition: var(--transition);\
+   150	\}\
+   151	\
+   152	.nav-link:hover,\
+   153	.nav-link.active \{\
+   154	    background: var(--bg-light);\
+   155	    color: var(--primary-color);\
+   156	\}\
+   157	\
+   158	.cart-link \{\
+   159	    position: relative;\
+   160	\}\
+   161	\
+   162	.cart-count \{\
+   163	    position: absolute;\
+   164	    top: -5px;\
+   165	    right: -5px;\
+   166	    background: var(--danger-color);\
+   167	    color: #000000;\
+   168	    font-size: 0.75rem;\
+   169	    padding: 2px 6px;\
+   170	    border-radius: 10px;\
+   171	    min-width: 20px;\
+   172	    text-align: center;\
+   173	\}\
+   174	\
+   175	.mobile-menu-btn \{\
+   176	    display: none;\
+   177	    font-size: 1.5rem;\
+   178	    color: var(--text-dark);\
+   179	\}\
+   180	\
+   181	/* \uc0\u12514 \u12496 \u12452 \u12523 \u12513 \u12491 \u12517 \u12540  */\
+   182	.mobile-menu \{\
+   183	    position: fixed;\
+   184	    top: 0;\
+   185	    right: -100%;\
+   186	    width: 280px;\
+   187	    height: 100vh;\
+   188	    background: var(--bg-white);\
+   189	    box-shadow: var(--shadow-xl);\
+   190	    z-index: 2000;\
+   191	    transition: right 0.3s ease;\
+   192	    overflow-y: auto;\
+   193	\}\
+   194	\
+   195	.mobile-menu.active \{\
+   196	    right: 0;\
+   197	\}\
+   198	\
+   199	.mobile-menu-header \{\
+   200	    display: flex;\
+   201	    justify-content: space-between;\
+   202	    align-items: center;\
+   203	    padding: 1.5rem;\
+   204	    border-bottom: 1px solid var(--border-color);\
+   205	    font-weight: 600;\
+   206	    font-size: 1.1rem;\
+   207	\}\
+   208	\
+   209	.mobile-menu-close \{\
+   210	    font-size: 1.5rem;\
+   211	    color: var(--text-dark);\
+   212	\}\
+   213	\
+   214	.mobile-nav \{\
+   215	    display: flex;\
+   216	    flex-direction: column;\
+   217	    padding: 1rem;\
+   218	\}\
+   219	\
+   220	.mobile-nav-link \{\
+   221	    display: flex;\
+   222	    align-items: center;\
+   223	    gap: 0.75rem;\
+   224	    padding: 1rem;\
+   225	    border-radius: var(--border-radius);\
+   226	    transition: var(--transition);\
+   227	\}\
+   228	\
+   229	.mobile-nav-link:hover,\
+   230	.mobile-nav-link.active \{\
+   231	    background: var(--bg-light);\
+   232	    color: var(--primary-color);\
+   233	\}\
+   234	\
+   235	/* ==========================================\
+   236	   \uc0\u12498 \u12540 \u12525 \u12540 \u12475 \u12463 \u12471 \u12519 \u12531 \
+   237	   ========================================== */\
+   238	.hero \{\
+   239	    margin-top: 80px;\
+   240	    padding: 80px 0;\
+   241	    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);\
+   242	    color: #000000;\
+   243	    text-align: center;\
+   244	    position: relative;\
+   245	    overflow: hidden;\
+   246	\}\
+   247	\
+   248	.hero::before \{\
+   249	    content: '';\
+   250	    position: absolute;\
+   251	    top: -50%;\
+   252	    right: -50%;\
+   253	    width: 100%;\
+   254	    height: 100%;\
+   255	    background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);\
+   256	\}\
+   257	\
+   258	.hero-content \{\
+   259	    position: relative;\
+   260	    z-index: 1;\
+   261	\}\
+   262	\
+   263	.hero-title \{\
+   264	    font-size: 3rem;\
+   265	    font-weight: 800;\
+   266	    margin-bottom: 1rem;\
+   267	    line-height: 1.2;\
+   268	\}\
+   269	\
+   270	.hero-subtitle \{\
+   271	    font-size: 1.25rem;\
+   272	    margin-bottom: 2rem;\
+   273	    opacity: 0.95;\
+   274	\}\
+   275	\
+   276	/* ==========================================\
+   277	   \uc0\u12508 \u12479 \u12531 \
+   278	   ========================================== */\
+   279	.btn \{\
+   280	    display: inline-flex;\
+   281	    align-items: center;\
+   282	    gap: 0.5rem;\
+   283	    padding: 0.75rem 1.5rem;\
+   284	    font-size: 1rem;\
+   285	    font-weight: 600;\
+   286	    border-radius: var(--border-radius);\
+   287	    transition: var(--transition);\
+   288	    text-align: center;\
+   289	    justify-content: center;\
+   290	\}\
+   291	\
+   292	.btn-primary \{\
+   293	    background: var(--primary-color);\
+   294	    color: #000000;\
+   295	\}\
+   296	\
+   297	.btn-primary:hover \{\
+   298	    background: var(--primary-dark);\
+   299	    transform: translateY(-2px);\
+   300	    box-shadow: var(--shadow-lg);\
+   301	\}\
+   302	\
+   303	.btn-secondary \{\
+   304	    background: var(--bg-light);\
+   305	    color: var(--text-dark);\
+   306	    border: 2px solid var(--border-color);\
+   307	\}\
+   308	\
+   309	.btn-secondary:hover \{\
+   310	    background: var(--bg-white);\
+   311	    border-color: var(--primary-color);\
+   312	    color: var(--primary-color);\
+   313	\}\
+   314	\
+   315	.btn-danger \{\
+   316	    background: var(--danger-color);\
+   317	    color: #000000;\
+   318	\}\
+   319	\
+   320	.btn-danger:hover \{\
+   321	    background: #dc2626;\
+   322	\}\
+   323	\
+   324	/* ==========================================\
+   325	   \uc0\u12501 \u12451 \u12523 \u12479 \u12540  & \u12459 \u12486 \u12468 \u12522 \u12540 \
+   326	   ========================================== */\
+   327	.filters \{\
+   328	    margin-top: 80px;\
+   329	    padding: 2rem 0;\
+   330	    background: var(--bg-white);\
+   331	\}\
+   332	\
+   333	.filter-header \{\
+   334	    text-align: center;\
+   335	    margin-bottom: 1.5rem;\
+   336	\}\
+   337	\
+   338	.filter-header h2 \{\
+   339	    font-size: 1.5rem;\
+   340	    color: var(--text-dark);\
+   341	\}\
+   342	\
+   343	.category-filters \{\
+   344	    display: flex;\
+   345	    gap: 1rem;\
+   346	    justify-content: center;\
+   347	    flex-wrap: wrap;\
+   348	\}\
+   349	\
+   350	.category-btn \{\
+   351	    display: flex;\
+   352	    align-items: center;\
+   353	    gap: 0.5rem;\
+   354	    padding: 0.75rem 1.5rem;\
+   355	    background: var(--bg-light);\
+   356	    color: var(--text-dark);\
+   357	    border-radius: var(--border-radius);\
+   358	    font-weight: 500;\
+   359	    transition: var(--transition);\
+   360	\}\
+   361	\
+   362	.category-btn:hover,\
+   363	.category-btn.active \{\
+   364	    background: var(--primary-color);\
+   365	    color: #000000;\
+   366	    transform: translateY(-2px);\
+   367	    box-shadow: var(--shadow);\
+   368	\}\
+   369	\
+   370	/* ==========================================\
+   371	   \uc0\u21830 \u21697 \u19968 \u35239 \
+   372	   ========================================== */\
+   373	.products-section \{\
+   374	    padding: 3rem 0;\
+   375	\}\
+   376	\
+   377	.section-header \{\
+   378	    display: flex;\
+   379	    justify-content: space-between;\
+   380	    align-items: center;\
+   381	    margin-bottom: 2rem;\
+   382	    flex-wrap: wrap;\
+   383	    gap: 1rem;\
+   384	\}\
+   385	\
+   386	.section-header h2 \{\
+   387	    font-size: 2rem;\
+   388	    color: var(--text-dark);\
+   389	\}\
+   390	\
+   391	.sort-select \{\
+   392	    padding: 0.75rem 1rem;\
+   393	    border: 2px solid var(--border-color);\
+   394	    border-radius: var(--border-radius);\
+   395	    font-size: 1rem;\
+   396	    background: var(--bg-white);\
+   397	    cursor: pointer;\
+   398	    transition: var(--transition);\
+   399	\}\
+   400	\
+\pard\pardeftab720\partightenfactor0
+\cf2 \uc0\u12288 401	.sort-select:focus \{\
+   402	    outline: none;\
+   403	    border-color: var(--primary-color);\
+   404	\}\
+   405	\
+   406	.products-grid \{\
+   407	    display: grid;\
+   408	    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\
+   409	    gap: 2rem;\
+   410	\}\
+   411	\
+   412	.product-card \{\
+   413	    background: var(--bg-white);\
+   414	    border-radius: var(--border-radius);\
+   415	    overflow: hidden;\
+   416	    box-shadow: var(--shadow);\
+   417	    transition: var(--transition);\
+   418	    cursor: pointer;\
+   419	\}\
+   420	\
+   421	.product-card:hover \{\
+   422	    transform: translateY(-5px);\
+   423	    box-shadow: var(--shadow-xl);\
+   424	\}\
+   425	\
+   426	.product-image \{\
+   427	    width: 100%;\
+   428	    height: 250px;\
+   429	    object-fit: cover;\
+   430	    background: var(--bg-light);\
+   431	\}\
+   432	\
+   433	.product-body \{\
+   434	    padding: 1.25rem;\
+   435	\}\
+   436	\
+   437	.product-category-badge \{\
+   438	    display: inline-block;\
+   439	    padding: 0.25rem 0.75rem;\
+   440	    background: var(--bg-light);\
+   441	    color: var(--text-light);\
+   442	    font-size: 0.875rem;\
+   443	    border-radius: 20px;\
+   444	    margin-bottom: 0.5rem;\
+   445	\}\
+   446	\
+   447	.product-name \{\
+   448	    font-size: 1.125rem;\
+   449	    font-weight: 600;\
+   450	    color: var(--text-dark);\
+   451	    margin-bottom: 0.5rem;\
+   452	    display: -webkit-box;\
+   453	    -webkit-line-clamp: 2;\
+   454	    -webkit-box-orient: vertical;\
+   455	    overflow: hidden;\
+   456	\}\
+   457	\
+   458	.product-rating \{\
+   459	    display: flex;\
+   460	    align-items: center;\
+   461	    gap: 0.25rem;\
+   462	    margin-bottom: 0.75rem;\
+   463	    color: var(--accent-color);\
+   464	\}\
+   465	\
+   466	.product-price \{\
+   467	    font-size: 1.5rem;\
+   468	    font-weight: 700;\
+   469	    color: var(--primary-color);\
+   470	    margin-bottom: 0.75rem;\
+   471	\}\
+   472	\
+   473	.product-stock \{\
+   474	    font-size: 0.875rem;\
+   475	    color: var(--secondary-color);\
+   476	    margin-bottom: 1rem;\
+   477	\}\
+   478	\
+   479	.product-stock.out-of-stock \{\
+   480	    color: var(--danger-color);\
+   481	\}\
+   482	\
+   483	.btn-add-to-cart \{\
+   484	    width: 100%;\
+   485	\}\
+   486	\
+   487	/* ==========================================\
+   488	   \uc0\u12525 \u12540 \u12487 \u12451 \u12531 \u12464  & \u12456 \u12521 \u12540 \
+   489	   ========================================== */\
+   490	.loading \{\
+   491	    text-align: center;\
+   492	    padding: 3rem;\
+   493	\}\
+   494	\
+   495	.spinner \{\
+   496	    width: 50px;\
+   497	    height: 50px;\
+   498	    margin: 0 auto 1rem;\
+   499	    border: 4px solid var(--border-color);\
+   500	    border-top-color: var(--primary-color);\
+   501	    border-radius: 50%;\
+   502	    animation: spin 1s linear infinite;\
+   503	\}\
+   504	\
+   505	@keyframes spin \{\
+   506	    to \{ transform: rotate(360deg); \}\
+   507	\}\
+   508	\
+   509	.no-products \{\
+   510	    text-align: center;\
+   511	    padding: 3rem;\
+   512	    color: var(--text-light);\
+   513	\}\
+   514	\
+   515	.no-products i \{\
+   516	    font-size: 4rem;\
+   517	    margin-bottom: 1rem;\
+   518	    opacity: 0.5;\
+   519	\}\
+   520	\
+   521	/* ==========================================\
+   522	   \uc0\u29305 \u24500 \u12475 \u12463 \u12471 \u12519 \u12531 \
+   523	   ========================================== */\
+   524	.features \{\
+   525	    padding: 3rem 0;\
+   526	    background: var(--bg-white);\
+   527	\}\
+   528	\
+   529	.features-grid \{\
+   530	    display: grid;\
+   531	    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\
+   532	    gap: 2rem;\
+   533	\}\
+   534	\
+   535	.feature-card \{\
+   536	    text-align: center;\
+   537	    padding: 2rem;\
+   538	\}\
+   539	\
+   540	.feature-card i \{\
+   541	    font-size: 3rem;\
+   542	    color: var(--primary-color);\
+   543	    margin-bottom: 1rem;\
+   544	\}\
+   545	\
+   546	.feature-card h3 \{\
+   547	    font-size: 1.25rem;\
+   548	    margin-bottom: 0.5rem;\
+   549	\}\
+   550	\
+   551	.feature-card p \{\
+   552	    color: var(--text-light);\
+   553	\}\
+   554	\
+   555	/* ==========================================\
+   556	   \uc0\u12497 \u12531 \u12367 \u12378 \u12522 \u12473 \u12488 \
+   557	   ========================================== */\
+   558	.breadcrumb \{\
+   559	    margin-top: 80px;\
+   560	    padding: 1rem 0;\
+   561	    background: var(--bg-white);\
+   562	    border-bottom: 1px solid var(--border-color);\
+   563	\}\
+   564	\
+   565	.breadcrumb .container \{\
+   566	    display: flex;\
+   567	    align-items: center;\
+   568	    gap: 0.5rem;\
+   569	    flex-wrap: wrap;\
+   570	\}\
+   571	\
+   572	.breadcrumb a \{\
+   573	    color: var(--primary-color);\
+   574	\}\
+   575	\
+   576	.breadcrumb a:hover \{\
+   577	    text-decoration: underline;\
+   578	\}\
+   579	\
+   580	.breadcrumb i \{\
+   581	    font-size: 0.75rem;\
+   582	    color: var(--text-light);\
+   583	\}\
+   584	\
+   585	/* ==========================================\
+   586	   \uc0\u21830 \u21697 \u35443 \u32048 \u12506 \u12540 \u12472 \
+   587	   ========================================== */\
+   588	.product-detail \{\
+   589	    padding: 3rem 0;\
+   590	\}\
+   591	\
+   592	.product-detail-content \{\
+   593	    display: grid;\
+   594	    grid-template-columns: 1fr 1fr;\
+   595	    gap: 3rem;\
+   596	\}\
+   597	\
+   598	.main-image img \{\
+   599	    width: 100%;\
+   600	    height: auto;\
+   601	    border-radius: var(--border-radius);\
+   602	    box-shadow: var(--shadow-lg);\
+   603	\}\
+   604	\
+   605	.product-info \{\
+   606	    background: var(--bg-white);\
+   607	    padding: 2rem;\
+   608	    border-radius: var(--border-radius);\
+   609	    box-shadow: var(--shadow);\
+   610	\}\
+   611	\
+   612	.product-category \{\
+   613	    display: inline-block;\
+   614	    padding: 0.5rem 1rem;\
+   615	    background: var(--bg-light);\
+   616	    color: var(--text-light);\
+   617	    font-size: 0.875rem;\
+   618	    border-radius: 20px;\
+   619	    margin-bottom: 1rem;\
+   620	\}\
+   621	\
+   622	.product-title \{\
+   623	    font-size: 2rem;\
+   624	    margin-bottom: 1rem;\
+   625	\}\
+   626	\
+   627	.product-description \{\
+   628	    margin: 1.5rem 0;\
+   629	    padding: 1.5rem;\
+   630	    background: var(--bg-light);\
+   631	    border-radius: var(--border-radius);\
+   632	\}\
+   633	\
+   634	.product-description h3 \{\
+   635	    margin-bottom: 0.75rem;\
+   636	\}\
+   637	\
+   638	.quantity-selector \{\
+   639	    margin: 2rem 0;\
+   640	\}\
+   641	\
+   642	.quantity-selector label \{\
+   643	    display: block;\
+   644	    font-weight: 600;\
+   645	    margin-bottom: 0.5rem;\
+   646	\}\
+   647	\
+   648	.quantity-controls \{\
+   649	    display: flex;\
+   650	    align-items: center;\
+   651	    gap: 1rem;\
+   652	\}\
+   653	\
+   654	.quantity-btn \{\
+   655	    width: 40px;\
+   656	    height: 40px;\
+   657	    background: var(--bg-light);\
+   658	    border-radius: var(--border-radius);\
+   659	    display: flex;\
+   660	    align-items: center;\
+   661	    justify-content: center;\
+   662	    transition: var(--transition);\
+   663	\}\
+   664	\
+   665	.quantity-btn:hover \{\
+   666	    background: var(--primary-color);\
+   667	    color: #000000;\
+   668	\}\
+   669	\
+   670	.quantity-controls input \{\
+   671	    width: 80px;\
+   672	    text-align: center;\
+   673	    padding: 0.75rem;\
+   674	    border: 2px solid var(--border-color);\
+   675	    border-radius: var(--border-radius);\
+   676	    font-size: 1.125rem;\
+   677	    font-weight: 600;\
+   678	\}\
+   679	\
+   680	.product-actions \{\
+   681	    display: flex;\
+   682	    gap: 1rem;\
+   683	    margin-bottom: 2rem;\
+   684	    flex-wrap: wrap;\
+   685	\}\
+   686	\
+   687	.product-actions .btn \{\
+   688	    flex: 1;\
+   689	    min-width: 200px;\
+   690	\}\
+   691	\
+   692	.product-features \{\
+   693	    border-top: 1px solid var(--border-color);\
+   694	    padding-top: 1.5rem;\
+   695	\}\
+   696	\
+   697	.feature-item \{\
+   698	    display: flex;\
+   699	    align-items: center;\
+   700	    gap: 0.75rem;\
+   701	    padding: 0.75rem 0;\
+   702	    color: var(--text-light);\
+   703	\}\
+   704	\
+   705	.feature-item i \{\
+   706	    color: var(--secondary-color);\
+   707	    font-size: 1.25rem;\
+   708	\}\
+   709	\
+   710	.product-not-found \{\
+   711	    text-align: center;\
+   712	    padding: 4rem 2rem;\
+   713	\}\
+   714	\
+   715	.product-not-found i \{\
+   716	    font-size: 5rem;\
+   717	    color: var(--danger-color);\
+   718	    margin-bottom: 1rem;\
+   719	\}\
+   720	\
+   721	.product-not-found h2 \{\
+   722	    margin-bottom: 1rem;\
+   723	\}\
+   724	\
+   725	/* ==========================================\
+   726	   \uc0\u12459 \u12540 \u12488 \u12506 \u12540 \u12472 \
+   727	   ========================================== */\
+   728	.cart-section \{\
+   729	    padding: 3rem 0;\
+   730	    min-height: 60vh;\
+   731	\}\
+   732	\
+   733	.cart-title \{\
+   734	    display: flex;\
+   735	    align-items: center;\
+   736	    gap: 0.75rem;\
+   737	    font-size: 2rem;\
+   738	    margin-bottom: 2rem;\
+   739	\}\
+   740	\
+   741	.empty-cart \{\
+   742	    background: var(--bg-white);\
+   743	    border-radius: var(--border-radius);\
+   744	    box-shadow: var(--shadow);\
+   745	    padding: 4rem 2rem;\
+   746	\}\
+   747	\
+   748	.empty-cart-content \{\
+   749	    text-align: center;\
+   750	    max-width: 500px;\
+   751	    margin: 0 auto;\
+   752	\}\
+   753	\
+   754	.empty-cart-content i \{\
+   755	    font-size: 5rem;\
+   756	    color: var(--text-light);\
+   757	    margin-bottom: 1rem;\
+   758	    opacity: 0.5;\
+   759	\}\
+   760	\
+   761	.empty-cart-content h2 \{\
+   762	    margin-bottom: 1rem;\
+   763	\}\
+   764	\
+   765	.empty-cart-content p \{\
+   766	    color: var(--text-light);\
+   767	    margin-bottom: 2rem;\
+   768	\}\
+   769	\
+   770	.cart-content \{\
+   771	    display: grid;\
+   772	    grid-template-columns: 2fr 1fr;\
+   773	    gap: 2rem;\
+   774	    align-items: start;\
+   775	\}\
+   776	\
+   777	.cart-items \{\
+   778	    background: var(--bg-white);\
+   779	    border-radius: var(--border-radius);\
+   780	    box-shadow: var(--shadow);\
+   781	    padding: 2rem;\
+   782	\}\
+   783	\
+   784	.cart-items-header \{\
+   785	    display: flex;\
+   786	    justify-content: space-between;\
+   787	    align-items: center;\
+   788	    margin-bottom: 1.5rem;\
+   789	    padding-bottom: 1rem;\
+   790	    border-bottom: 2px solid var(--border-color);\
+   791	\}\
+   792	\
+   793	.btn-clear-cart \{\
+   794	    display: flex;\
+   795	    align-items: center;\
+   796	    gap: 0.5rem;\
+   797	    padding: 0.5rem 1rem;\
+   798	    color: var(--danger-color);\
+   799	    border: 1px solid var(--danger-color);\
+   800	    border-radius: var(--border-radius);
+\f1 \
+
+\f0 \uc0\u12288 801	    transition: var(--transition);\
+   802	\}\
+   803	\
+   804	.btn-clear-cart:hover \{\
+   805	    background: var(--danger-color);\
+   806	    color: #000000;\
+   807	\}\
+   808	\
+   809	.cart-item \{\
+   810	    display: flex;\
+   811	    gap: 1.5rem;\
+   812	    padding: 1.5rem 0;\
+   813	    border-bottom: 1px solid var(--border-color);\
+   814	\}\
+   815	\
+   816	.cart-item:last-child \{\
+   817	    border-bottom: none;\
+   818	\}\
+   819	\
+   820	.cart-item-image \{\
+   821	    width: 120px;\
+   822	    height: 120px;\
+   823	    object-fit: cover;\
+   824	    border-radius: var(--border-radius);\
+   825	    background: var(--bg-light);\
+   826	\}\
+   827	\
+   828	.cart-item-details \{\
+   829	    flex: 1;\
+   830	\}\
+   831	\
+   832	.cart-item-name \{\
+   833	    font-size: 1.125rem;\
+   834	    font-weight: 600;\
+   835	    margin-bottom: 0.5rem;\
+   836	\}\
+   837	\
+   838	.cart-item-category \{\
+   839	    font-size: 0.875rem;\
+   840	    color: var(--text-light);\
+   841	    margin-bottom: 1rem;\
+   842	\}\
+   843	\
+   844	.cart-item-controls \{\
+   845	    display: flex;\
+   846	    align-items: center;\
+   847	    gap: 1rem;\
+   848	\}\
+   849	\
+   850	.cart-item-quantity \{\
+   851	    display: flex;\
+   852	    align-items: center;\
+   853	    gap: 0.5rem;\
+   854	\}\
+   855	\
+   856	.cart-item-price \{\
+   857	    font-size: 1.25rem;\
+   858	    font-weight: 700;\
+   859	    color: var(--primary-color);\
+   860	\}\
+   861	\
+   862	.btn-remove-item \{\
+   863	    padding: 0.5rem 1rem;\
+   864	    color: var(--danger-color);\
+   865	    border: 1px solid var(--danger-color);\
+   866	    border-radius: var(--border-radius);\
+   867	    transition: var(--transition);\
+   868	\}\
+   869	\
+   870	.btn-remove-item:hover \{\
+   871	    background: var(--danger-color);\
+   872	    color: #000000;\
+   873	\}\
+   874	\
+   875	/* \uc0\u12459 \u12540 \u12488 \u27010 \u35201  */\
+   876	.cart-summary \{\
+   877	    position: sticky;\
+   878	    top: 100px;\
+   879	\}\
+   880	\
+   881	.summary-card \{\
+   882	    background: var(--bg-white);\
+   883	    border-radius: var(--border-radius);\
+   884	    box-shadow: var(--shadow);\
+   885	    padding: 2rem;\
+   886	    margin-bottom: 1rem;\
+   887	\}\
+   888	\
+   889	.summary-card h3 \{\
+   890	    font-size: 1.5rem;\
+   891	    margin-bottom: 1.5rem;\
+   892	    padding-bottom: 1rem;\
+   893	    border-bottom: 2px solid var(--border-color);\
+   894	\}\
+   895	\
+   896	.summary-row \{\
+   897	    display: flex;\
+   898	    justify-content: space-between;\
+   899	    padding: 0.75rem 0;\
+   900	    font-size: 1rem;\
+   901	\}\
+   902	\
+   903	.summary-total \{\
+   904	    font-size: 1.25rem;\
+   905	    font-weight: 700;\
+   906	    color: var(--primary-color);\
+   907	    border-top: 2px solid var(--border-color);\
+   908	    margin-top: 1rem;\
+   909	    padding-top: 1rem;\
+   910	\}\
+   911	\
+   912	.shipping-info \{\
+   913	    display: flex;\
+   914	    align-items: center;\
+   915	    gap: 0.5rem;\
+   916	    padding: 1rem;\
+   917	    background: #dbeafe;\
+   918	    color: #1e40af;\
+   919	    border-radius: var(--border-radius);\
+   920	    font-size: 0.875rem;\
+   921	    margin: 1rem 0;\
+   922	\}\
+   923	\
+   924	.btn-checkout \{\
+   925	    width: 100%;\
+   926	    margin: 1rem 0;\
+   927	    font-size: 1.125rem;\
+   928	    padding: 1rem;\
+   929	\}\
+   930	\
+   931	.payment-methods \{\
+   932	    text-align: center;\
+   933	    padding-top: 1rem;\
+   934	    border-top: 1px solid var(--border-color);\
+   935	\}\
+   936	\
+   937	.payment-methods p \{\
+   938	    font-size: 0.875rem;\
+   939	    color: var(--text-light);\
+   940	    margin-bottom: 0.5rem;\
+   941	\}\
+   942	\
+   943	.payment-icons \{\
+   944	    display: flex;\
+   945	    justify-content: center;\
+   946	    gap: 1rem;\
+   947	    font-size: 2rem;\
+   948	    color: var(--text-light);\
+   949	\}\
+   950	\
+   951	.benefits-card \{\
+   952	    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);\
+   953	    color: #000000;\
+   954	    border-radius: var(--border-radius);\
+   955	    padding: 1.5rem;\
+   956	\}\
+   957	\
+   958	.benefits-card h4 \{\
+   959	    display: flex;\
+   960	    align-items: center;\
+   961	    gap: 0.5rem;\
+   962	    margin-bottom: 1rem;\
+   963	\}\
+   964	\
+   965	.benefits-card ul \{\
+   966	    list-style: none;\
+   967	\}\
+   968	\
+   969	.benefits-card li \{\
+   970	    display: flex;\
+   971	    align-items: center;\
+   972	    gap: 0.5rem;\
+   973	    padding: 0.5rem 0;\
+   974	\}\
+   975	\
+   976	/* ==========================================\
+   977	   \uc0\u12362 \u12377 \u12377 \u12417 \u21830 \u21697  / \u38306 \u36899 \u21830 \u21697 \
+   978	   ========================================== */\
+   979	.recommended-products,\
+   980	.related-products \{\
+   981	    padding: 3rem 0;\
+   982	    background: var(--bg-white);\
+   983	\}\
+   984	\
+   985	.recommended-products h2,\
+   986	.related-products h2 \{\
+   987	    display: flex;\
+   988	    align-items: center;\
+   989	    gap: 0.75rem;\
+   990	    font-size: 2rem;\
+   991	    margin-bottom: 2rem;\
+   992	\}\
+   993	\
+   994	/* ==========================================\
+   995	   \uc0\u12501 \u12483 \u12479 \u12540 \
+   996	   ========================================== */\
+   997	.footer \{\
+   998	    background: #000000;\
+   999	    color: #ffffff;\
+  1000	    padding: 3rem 0 1rem;\
+  1001	    margin-top: 4rem;\
+  1002	\}\
+  1003	\
+  1004	.footer-content \{\
+  1005	    display: grid;\
+  1006	    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\
+  1007	    gap: 2rem;\
+  1008	    margin-bottom: 2rem;\
+  1009	\}\
+  1010	\
+  1011	.footer-section h3,\
+  1012	.footer-section h4 \{\
+  1013	    margin-bottom: 1rem;\
+  1014	\}\
+  1015	\
+  1016	.footer-section p \{\
+  1017	    opacity: 0.8;\
+  1018	    margin-bottom: 0.5rem;\
+  1019	\}\
+  1020	\
+  1021	.footer-section ul \{\
+  1022	    list-style: none;\
+  1023	\}\
+  1024	\
+  1025	.footer-section li \{\
+  1026	    margin-bottom: 0.5rem;\
+  1027	\}\
+  1028	\
+  1029	.footer-section a \{\
+  1030	    opacity: 0.8;\
+  1031	    transition: var(--transition);\
+  1032	\}\
+  1033	\
+  1034	.footer-section a:hover \{\
+  1035	    opacity: 1;\
+  1036	    color: var(--primary-color);\
+  1037	\}\
+  1038	\
+  1039	.social-links \{\
+  1040	    display: flex;\
+  1041	    gap: 1rem;\
+  1042	    margin-top: 1rem;\
+  1043	\}\
+  1044	\
+  1045	.social-links a \{\
+  1046	    width: 40px;\
+  1047	    height: 40px;\
+  1048	    display: flex;\
+  1049	    align-items: center;\
+  1050	    justify-content: center;\
+  1051	    background: rgba(255, 255, 255, 0.1);\
+  1052	    border-radius: 50%;\
+  1053	    font-size: 1.25rem;\
+  1054	    transition: var(--transition);\
+  1055	\}\
+  1056	\
+  1057	.social-links a:hover \{\
+  1058	    background: var(--primary-color);\
+  1059	    transform: translateY(-3px);\
+  1060	\}\
+  1061	\
+  1062	.footer-bottom \{\
+  1063	    text-align: center;\
+  1064	    padding-top: 2rem;\
+  1065	    border-top: 1px solid rgba(255, 255, 255, 0.1);\
+  1066	    opacity: 0.8;\
+  1067	\}\
+  1068	\
+  1069	/* ==========================================\
+  1070	   \uc0\u12488 \u12483 \u12503 \u12408 \u25147 \u12427 \u12508 \u12479 \u12531 \
+  1071	   ========================================== */\
+  1072	.scroll-top \{\
+  1073	    position: fixed;\
+  1074	    bottom: 30px;\
+  1075	    right: 30px;\
+  1076	    width: 50px;\
+  1077	    height: 50px;\
+  1078	    background: var(--primary-color);\
+  1079	    color: #000000;\
+  1080	    border-radius: 50%;\
+  1081	    font-size: 1.25rem;\
+  1082	    box-shadow: var(--shadow-lg);\
+  1083	    opacity: 0;\
+  1084	    visibility: hidden;\
+  1085	    transition: var(--transition);\
+  1086	    z-index: 999;\
+  1087	\}\
+  1088	\
+  1089	.scroll-top.active \{\
+  1090	    opacity: 1;\
+  1091	    visibility: visible;\
+  1092	\}\
+  1093	\
+  1094	.scroll-top:hover \{\
+  1095	    background: var(--primary-dark);\
+  1096	    transform: translateY(-5px);\
+  1097	\}\
+  1098	\
+  1099	/* ==========================================\
+  1100	   \uc0\u12488 \u12540 \u12473 \u12488 \u36890 \u30693 \
+  1101	   ========================================== */\
+  1102	.toast \{\
+  1103	    position: fixed;\
+  1104	    bottom: 30px;\
+  1105	    left: 50%;\
+  1106	    transform: translateX(-50%) translateY(100px);\
+  1107	    background: #000000;\
+  1108	    color: #ffffff;\
+  1109	    padding: 1rem 2rem;\
+  1110	    border-radius: var(--border-radius);\
+  1111	    box-shadow: var(--shadow-xl);\
+  1112	    display: flex;\
+  1113	    align-items: center;\
+  1114	    gap: 0.75rem;\
+  1115	    z-index: 9999;\
+  1116	    opacity: 0;\
+  1117	    transition: all 0.3s ease;\
+  1118	\}\
+  1119	\
+  1120	.toast.show \{\
+  1121	    opacity: 1;\
+  1122	    transform: translateX(-50%) translateY(0);\
+  1123	\}\
+  1124	\
+  1125	.toast i \{\
+  1126	    font-size: 1.25rem;\
+  1127	    color: var(--secondary-color);\
+  1128	\}\
+  1129	\
+  1130	/* ==========================================\
+  1131	   \uc0\u12514 \u12540 \u12480 \u12523 \
+  1132	   ========================================== */\
+  1133	.modal \{\
+  1134	    position: fixed;\
+  1135	    top: 0;\
+  1136	    left: 0;\
+  1137	    width: 100%;\
+  1138	    height: 100%;\
+  1139	    background: rgba(0, 0, 0, 0.5);\
+  1140	    display: none;\
+  1141	    align-items: center;\
+  1142	    justify-content: center;\
+  1143	    z-index: 10000;\
+  1144	\}\
+  1145	\
+  1146	.modal.active \{\
+  1147	    display: flex;\
+  1148	\}\
+  1149	\
+  1150	.modal-content \{\
+  1151	    background: var(--bg-white);\
+  1152	    border-radius: var(--border-radius);\
+  1153	    max-width: 500px;\
+  1154	    width: 90%;\
+  1155	    box-shadow: var(--shadow-xl);\
+  1156	\}\
+  1157	\
+  1158	.modal-header \{\
+  1159	    display: flex;\
+  1160	    justify-content: space-between;\
+  1161	    align-items: center;\
+  1162	    padding: 1.5rem;\
+  1163	    border-bottom: 1px solid var(--border-color);\
+  1164	\}\
+  1165	\
+  1166	.modal-close \{\
+  1167	    font-size: 1.5rem;\
+  1168	    color: var(--text-light);\
+  1169	\}\
+  1170	\
+  1171	.modal-body \{\
+  1172	    padding: 2rem 1.5rem;\
+  1173	\}\
+  1174	\
+  1175	.modal-footer \{\
+  1176	    display: flex;\
+  1177	    justify-content: flex-end;\
+  1178	    gap: 1rem;\
+  1179	    padding: 1.5rem;\
+  1180	    border-top: 1px solid var(--border-color);\
+  1181	\}\
+  1182	\
+  1183	/* ==========================================\
+  1184	   \uc0\u12524 \u12473 \u12509 \u12531 \u12471 \u12502 \u12487 \u12470 \u12452 \u12531 \
+  1185	   ========================================== */\
+  1186	@media (max-width: 1024px) \{\
+  1187	    .product-detail-content \{\
+  1188	        grid-template-columns: 1fr;\
+  1189	    \}\
+  1190	    \
+  1191	    .cart-content \{\
+  1192	        grid-template-columns: 1fr;\
+  1193	    \}\
+  1194	    \
+  1195	    .cart-summary \{\
+  1196	        position: static;\
+  1197	    \}\
+  1198	\}\
+  1199	\
+  1200	@media (max-width: 768px) \{
+\f1 \
+
+\f0   1201	    .header-content \{\
+  1202	        gap: 1rem;\
+  1203	    \}\
+  1204	    \
+  1205	    .search-bar \{\
+  1206	        max-width: 100%;\
+  1207	        order: 3;\
+  1208	        flex-basis: 100%;\
+  1209	    \}\
+  1210	    \
+  1211	    .nav \{\
+  1212	        display: none;\
+  1213	    \}\
+  1214	    \
+  1215	    .mobile-menu-btn \{\
+  1216	        display: block;\
+  1217	    \}\
+  1218	    \
+  1219	    .hero \{\
+  1220	        padding: 60px 0;\
+  1221	    \}\
+  1222	    \
+  1223	    .hero-title \{\
+  1224	        font-size: 2rem;\
+  1225	    \}\
+  1226	    \
+  1227	    .hero-subtitle \{\
+  1228	        font-size: 1rem;\
+  1229	    \}\
+  1230	    \
+  1231	    .category-filters \{\
+  1232	        overflow-x: auto;\
+  1233	        justify-content: flex-start;\
+  1234	        padding-bottom: 0.5rem;\
+  1235	    \}\
+  1236	    \
+  1237	    .category-btn \{\
+  1238	        flex-shrink: 0;\
+  1239	    \}\
+  1240	    \
+  1241	    .products-grid \{\
+  1242	        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\
+  1243	        gap: 1rem;\
+  1244	    \}\
+  1245	    \
+  1246	    .section-header \{\
+  1247	        flex-direction: column;\
+  1248	        align-items: flex-start;\
+  1249	    \}\
+  1250	    \
+  1251	    .cart-item \{\
+  1252	        flex-direction: column;\
+  1253	    \}\
+  1254	    \
+  1255	    .cart-item-image \{\
+  1256	        width: 100%;\
+  1257	        height: 200px;\
+  1258	    \}\
+  1259	    \
+  1260	    .cart-item-controls \{\
+  1261	        flex-wrap: wrap;\
+  1262	    \}\
+  1263	    \
+  1264	    .product-actions \{\
+  1265	        flex-direction: column;\
+  1266	    \}\
+  1267	    \
+  1268	    .product-actions .btn \{\
+  1269	        width: 100%;\
+  1270	    \}\
+  1271	    \
+  1272	    .features-grid \{\
+  1273	        grid-template-columns: 1fr;\
+  1274	        gap: 1.5rem;\
+  1275	    \}\
+  1276	    \
+  1277	    .footer-content \{\
+  1278	        grid-template-columns: 1fr;\
+  1279	    \}\
+  1280	\}\
+  1281	\
+  1282	@media (max-width: 480px) \{\
+  1283	    .hero-title \{\
+  1284	        font-size: 1.5rem;\
+  1285	    \}\
+  1286	    \
+  1287	    .products-grid \{\
+  1288	        grid-template-columns: 1fr;\
+  1289	    \}\
+  1290	    \
+  1291	    .cart-items,\
+  1292	    .summary-card \{\
+  1293	        padding: 1rem;\
+  1294	    \}\
+  1295	\}
+\f1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+}
